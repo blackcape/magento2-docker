@@ -17,7 +17,7 @@ services:
       - www
 
   phpfpm:
-    image: markoshust/magento2-php:7.1-fpm-0
+    image: mageinferno/magento2-php:7.0-fpm-1 # change this to 5.6-fpm-1 if magento 1.9
     links:
       - db
     volumes: *appvolumes
@@ -33,7 +33,7 @@ services:
     env_file: env/mysql.env
 
   setup:
-    image: markoshust/magento2-php:7.1-fpm-0
+    image: mageinferno/magento2-php:7.0-fpm-1 # change this to 5.6-fpm-1 if magento 1.9
     command: /usr/local/bin/mage-setup
     links:
       - db
